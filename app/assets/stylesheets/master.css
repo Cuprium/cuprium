@@ -1,0 +1,40 @@
+body 
+{
+  font-family: Helvetica, Arial, FreeSans, sans-serif;
+  font-size: 14px;
+  color:#e78f50;
+  background-color: black;
+}
+a.menu
+{
+  text-decoration:none;
+  font-size: 15px;
+  font-weight:bold;
+}
+a.menu:link,
+a.menu:visited
+{
+  color:#e78f50;
+}
+a.menu:hover
+{
+  color:#ff0000;
+}
+a.menu:active
+{
+  color:#ff0000;
+}
+
+#left-table {
+  color:#ffcf97;
+  font-weight:bold;
+  background-image:url(/assets/pennies-ripples-1.jpg);
+}
+
+.large-font {
+  font-size:60px;
+}
+
+.medium-font {
+  font-size:30px;
+}
