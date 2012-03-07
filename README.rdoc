@@ -1,0 +1,19 @@
+== Welcome to Cuprium!
+
+Cuprium is an OSS software suite for managing credit unions. It is written in Ruby on Rails, version 3.2.2.
+
+It will only work with PostgresSQL as the database, we decided to go for a secure, enterprise-class database.
+
+This is an OSS project and will be released under the GPL. We will be following the standard model and offering support, training and consultancy.
+
+This is a public repository and we welcome suggestions and criticisms, as long as they are made with a good, helpful heart.
+
+For more information please contact us through the github issues tracker.
+
+This is a very young project and we are extremely busy getting the first Alpha edition up. So we may take a while to reply.
+
+Thanks
+
+The Cuprium team.
+
+Cuprium CIC is a private Community Interest Company registered in England and Wales - once the paperwork has been processed.
