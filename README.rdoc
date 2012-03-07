@@ -12,6 +12,29 @@ For more information please contact us through the github issues tracker.
 
 This is a very young project and we are extremely busy getting the first Alpha edition up. So we may take a while to reply.
 
+Cuprium is designed to be
+
+* secure
+* easy to use
+* fully web enabled
+* fully supportive of mobile services
+* multilingual
+* accessible to users with visual impairments
+* quickly adaptable to match the needs of the users
+* compatible with open standards and protocols
+* extensible
+* robust and resilient
+* able to grow to meet long-term needs
+* fully transparent to security analysts
+
+Cuprium can be adapted quickly to interface to network infrastructures, reporting systems and any automated access service the banking industry may choose to make available.
+
+Cuprium is Free & Open Source software released under the GPL. All modifications distributed are fed back to the user community for its common benefit. Furthermore, such a software model ensures that the system will survive regardless of the fortunes of any company involved in its development or support.
+
+Cuprium can be modified or extended by any programmer, whether employed by a vendor of by a Credit Union or groups of CUs.
+
+Cuprium can provide a common framework through which third party companies can provide support and training services.
+
 Thanks
 
 The Cuprium team.
