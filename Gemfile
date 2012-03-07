@@ -22,6 +22,23 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem 'ruby-debug19'
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'annotate'
+end
+
+group :test, :cucumber do
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'rspec-rails', '>= 2.0.0.beta.20'
+  gem 'infinity_test'
+  gem 'factory_girl'
+  gem 'webmock'
+end
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
