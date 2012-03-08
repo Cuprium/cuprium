@@ -21,4 +21,8 @@ class DataManager < ActiveRecord::Base
     Lookup::Title[title_id] if title_id
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+  
 end
