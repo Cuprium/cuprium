@@ -1,5 +1,11 @@
 Cuprium::Application.routes.draw do
 
+  devise_for :data_managers
+
+  namespace :data_manager do
+    root to: 'home#index'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

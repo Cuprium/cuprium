@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+dm = DataManager.create!(email:'example@cuprium.org',password:'example1234',password_confirmation:'example1234',first_name:'Test',last_name:'Test',title_id:1)

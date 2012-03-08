@@ -1,0 +1,2 @@
+module DataManager::HomeHelper
+end
