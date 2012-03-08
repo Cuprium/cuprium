@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 
+gem 'rake'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -32,7 +34,7 @@ end
 group :test, :cucumber do
   gem 'capybara'
   gem 'shoulda-matchers'
-  gem 'rspec-rails', '>= 2.0.0.beta.20'
+  gem 'rspec-rails'
   gem 'infinity_test'
   gem 'factory_girl'
   gem 'webmock'

@@ -192,7 +192,8 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.2)
-  rspec-rails (>= 2.0.0.beta.20)
+  rake
+  rspec-rails
   ruby-debug19
   sass-rails (~> 3.2.3)
   shoulda-matchers
