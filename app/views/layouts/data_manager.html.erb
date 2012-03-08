@@ -62,8 +62,10 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <%= yield :left_links %>
-        <%= yield %>
+        <div class="span9">
+          <%= yield :left_links %>
+          <%= yield %>
+        </div>
       </div><!--/row-->
 
       <hr>
