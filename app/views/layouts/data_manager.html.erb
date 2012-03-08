@@ -31,6 +31,7 @@
     <!-- Let's get JQ from google -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <%= javascript_include_tag "js/bootstrap.min"  %>
+    <%= javascript_include_tag "common"  %>
   </head>
 
   <body>
@@ -46,13 +47,13 @@
           <a class="brand" href="<%= data_manager_root_path %>">Cuprium: Data Manager</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#payments">Payments</a></li>
-              <li><a href="#withdrawals">Withdrawals</a></li>
-              <li><a href="#transfers">Transfers</a></li>
-              <li><a href="#loans">Loans</a></li>
-              <li><a href="#members">Members</a></li>
-              <li><a href="#escrow">Escrow</a></li>
+              <li id="home_link"><a href="<%= data_manager_root_path %>">Home</a></li>
+              <li id="payments_link"><a href="<%= data_manager_payments_path %>">Payments</a></li>
+              <li id="withdrawals_link"><a href="#withdrawals">Withdrawals</a></li>
+              <li id="transfers_link"><a href="#transfers">Transfers</a></li>
+              <li id="loans_link"><a href="#loans">Loans</a></li>
+              <li id="members_link"><a href="#members">Members</a></li>
+              <li id="escrow_link"><a href="#escrow">Escrow</a></li>
             </ul>
             <p class="navbar-text pull-right">Logged in as <%= current_data_manager.full_name %></p>
           </div><!--/.nav-collapse -->
