@@ -1,0 +1,19 @@
+# Test localisation file
+
+test:
+  copyright: TEST Free and Open Source, Cuprium 2012
+  logged_in_as: TEST Logged in as
+
+  data_manager:
+    welcome: TEST Welcome Data Manager
+    index_page_message: TEST Please select which area you want to work in from the menu above.
+
+    navbar:
+      title: "TEST Cuprium: TEST Data Manager"
+      home: TEST Home
+      payments: TEST Payments
+      withdrawals: TEST Withdrawals
+      transfers: TEST Transfers
+      loans: TEST Loans
+      members: TEST Members
+      escrow: TEST Escrow

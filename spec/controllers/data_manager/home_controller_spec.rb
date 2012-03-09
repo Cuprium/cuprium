@@ -17,6 +17,17 @@ describe DataManager::HomeController do
       get 'index'
       response.should render_template("data_manager")
     end
+    context "rendering" do
+      render_views
+      it "defaults the locale" do
+        get 'index'
+        response.body.should_not =~ /TEST Free and Open Source/m
+      end
+      it "respects the locale" do
+        get 'index', locale: 'test'
+        response.body.should =~ /TEST Free and Open Source/m
+      end
+    end
   end
 
 end
