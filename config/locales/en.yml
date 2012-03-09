@@ -2,4 +2,18 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  copyright: Free and Open Source, Cuprium 2012
+
+  data_manager:
+    welcome: Welcome Data Manager
+    index_page_message: Please select which area you want to work in from the menu above.
+
+    navbar:
+      title: "Cuprium: Data Manager"
+      home: Home
+      payments: Payments
+      withdrawals: Withdrawals
+      transfers: Transfers
+      loans: Loans
+      members: Members
+      escrow: Escrow
