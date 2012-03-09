@@ -3,6 +3,7 @@
 
 en:
   copyright: Free and Open Source, Cuprium 2012
+  logged_in_as: Logged in as
 
   data_manager:
     welcome: Welcome Data Manager
