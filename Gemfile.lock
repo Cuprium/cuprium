@@ -65,6 +65,8 @@ GEM
     factory_girl (2.6.1)
       activesupport (>= 2.3.9)
     ffi (1.0.11)
+    formtastic (2.1.1)
+      actionpack (~> 3.0)
     highline (1.6.11)
     hike (1.2.1)
     i18n (0.6.0)
@@ -188,6 +190,7 @@ DEPENDENCIES
   capybara
   devise
   factory_girl
+  formtastic
   infinity_test
   jquery-rails
   pg
