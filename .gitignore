@@ -15,3 +15,5 @@
 /tmp
 
 *.pstore
+
+vendor/cache
