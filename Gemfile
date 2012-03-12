@@ -10,9 +10,7 @@ gem 'rake'
 gem 'pg'
 
 gem 'devise'
-
-gem 'formtastic'
-
+  
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -33,11 +31,17 @@ group :development do
   gem 'annotate'
 end
 
+group :development, :test do
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'growl'
+  # gem 'ruby_gntp'
+end
+
 group :test, :cucumber do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
-  gem 'infinity_test'
   gem 'factory_girl'
   gem 'webmock'
 end
