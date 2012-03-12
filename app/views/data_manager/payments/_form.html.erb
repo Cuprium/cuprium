@@ -1,0 +1,23 @@
+<div class="span6">
+  <%= form_for @payment, url: data_manager_payments_path(@student), html: {class: 'form-horizontal'} do |form| %>
+    <%= form.hidden_field :direction %> 
+    <!-- this needs tobe formatted using divs as per the examples -->
+    <fieldset>
+      <div class="control-group">
+       <%= form.label :amount, class: 'control-label' %> 
+       <div class="controls">
+         <%= form.text_field :amount, { class: 'input-xlarge' } %> 
+       </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :account, class: 'control-label'  %>  
+        <div class="controls">
+          <%= form.text_field :account, { class: 'input-xlarge' }  %> 
+        </div>
+      </div>
+      <div class="control-group">
+       <div class="controls"><%= form.button disable_with: "Processing ..." %> </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

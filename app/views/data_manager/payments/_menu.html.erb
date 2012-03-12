@@ -2,8 +2,9 @@
   <div class="well sidebar-nav">
     <ul class="nav nav-list">
       <li class="nav-header"><%= t(:title, scope: [:data_manager,:payments_menu]) %></li>
-      <li><a href="#"><%= t(:pay_in, scope: [:data_manager,:payments_menu]) %></a></li>
-      <li><a href="#"><%= t(:withdrawals, scope: [:data_manager,:payments_menu]) %></a></li>
+      <li><a href="<%= new_data_manager_payment_path(direction:'in') %>"><%= t(:pay_in, scope: [:data_manager,:payments_menu]) %></a></li>
+
+      <li><a href="<%= new_data_manager_payment_path(direction:'out') %>"><%= t(:withdrawals, scope: [:data_manager,:payments_menu]) %></a></li>
     </ul>
   </div><!--/.well -->
 </div><!--/span-->

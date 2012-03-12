@@ -4,7 +4,7 @@ Cuprium::Application.routes.draw do
 
   namespace :data_manager do
     root to: 'home#index'
-    resources :payments, only: [:index]
+    resources :payments, only: [:index,:new,:create]
   end
 
   # The priority is based upon order of creation:
