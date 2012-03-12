@@ -1,2 +1,0 @@
-watch( 'spec/controllers/(.*)\.rb' )  {|md| system("clear; bundle exec rspec #{md[0]}") }
-watch( 'app/controllers/(.*)\.rb' )  {|md| system("clear; bundle exec rspec spec/controllers/#{md[1]}_spec.rb") }
