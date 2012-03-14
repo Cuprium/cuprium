@@ -1,5 +1,6 @@
 <div class="span6">
   <h2><%= t(:accounts) %></h2>
+  <p><%= t(:"pick_account_#{@on_select}", scope: [:data_manager]) %></p>
   <%= form_tag search_data_manager_accounts_path, method: :get, class: 'well form-inline' do  %>
     <%= hidden_field_tag :on_select, @on_select %>
     <%= text_field_tag :search, nil, { class: 'input-small', placeholder: t(:search) } %> 
