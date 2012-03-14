@@ -3,7 +3,7 @@
   <%= form_tag search_data_manager_accounts_path, method: :get, class: 'well form-inline' do  %>
     <%= hidden_field_tag :on_select, @on_select %>
     <%= text_field_tag :search, nil, { class: 'input-small', placeholder: t(:search) } %> 
-    <%= button_tag t(:search,scope:[:helpers,:button]), disable_with: t(:processing), class: 'btn', type: 'submit' %>
+    <%= button_tag t('helpers.button.search',model:t(:account)), disable_with: t(:processing), class: 'btn', type: 'submit' %>
   <% end %>
 </div>
 <%= render partial: 'index', locals: { on_select: @on_select } if @accounts  %>
