@@ -1,8 +1,8 @@
 <div class="span6">
   <p>
-    <%= @payment.direction.capitalize %> of <%= @payment.amount %> made to <%= @payment.account %>
+    <%= t :"#{@payment.direction}" %> <%= t :of %> <%= @payment.amount %> <%= t :made_to %> <%= @payment.account %>
   </p>
   <p>
-    Balance <%= @account.balance %>
+    <%= t :balance %> <%= @account.balance %>
   </p>
 </div>

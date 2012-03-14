@@ -9,6 +9,8 @@ en:
   account: Account
 
   balance: Balance
+  of: of
+  made_to: made to
 
   data_manager:
     welcome: Welcome Data Manager
