@@ -1,0 +1,5 @@
+<div class="span6">
+  <% @accounts.each do |account| -%>
+    <%= link_to "#{account.owner} : #{account.number} : #{account.type}", select_data_manager_account_path(account.number,@on_select) %>
+  <% end -%>
+</div>

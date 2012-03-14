@@ -4,6 +4,8 @@
 en:
   copyright: Free and Open Source, Cuprium 2012
   logged_in_as: Logged in as
+  search: Search
+  processing: "Processing ..."
 
   data_manager:
     welcome: Welcome Data Manager
@@ -25,4 +27,12 @@ en:
       title: Payments Menu
       pay_in: Payments in
       withdrawals: Withdrawals
+
+    accounts: Accounts
+
+  helpers:
+    button:
+      create: "Create a %{model}"
+      update: "Confirm changes to %{model}"
+      search: "Search"
 

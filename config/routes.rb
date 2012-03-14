@@ -1,10 +1,20 @@
 Cuprium::Application.routes.draw do
 
+  get "accounts/search"
+
   devise_for :data_managers
 
   namespace :data_manager do
     root to: 'home#index'
     resources :payments, only: [:index,:new,:create]
+    resources :accounts, only: [:index] do
+      collection do
+        match '/search' => 'accounts#search'
+      end
+      member do
+        match '/select/:on_select' => 'accounts#select', as: 'select'
+      end
+    end
   end
 
   # The priority is based upon order of creation:
