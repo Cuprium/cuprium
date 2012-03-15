@@ -9,6 +9,5 @@ class DataManager::PaymentsController < DataManager::CommonController
     @payment = Payment.new params[:payment]
     @payment.save
     @account = Account.find @payment.account
-    respond_with @payment
   end
 end

@@ -1,6 +1,10 @@
 <div class="span6">
   <p>
+  <% if @payment.valid? -%>
     <%= t :"#{@payment.direction}" %> <%= t :of %> <%= @payment.amount %> <%= t :made_to %> <%= @payment.account %>
+  <% else -%>
+    <%= @payment.errors.full_messages.join('<br />') %>
+  <% end -%>
   </p>
   <p>
     <%= t :balance %> <%= @account.balance %>
