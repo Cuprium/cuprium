@@ -6,19 +6,27 @@ class Account
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_reader :number, :owner, :type, :search
-  attr_accessor :balance
+  attr_accessor :number, :owner, :type, :search, :balance, :debit_limit
+  validates_presence_of :number, :owner, :type, :balance
+
   def initialize(values={})
-    @number, @owner, @type = values[:number], values[:owner], values[:type]
-    @search = ""
+    @number, @owner, @type, @debit_limit = values[:number], values[:owner], values[:type], values[:debit_limit]
     @balance = 0.00
+    @debit_limit = 0.00 if @debit_limit.blank?
+    @search = ""
+  end
+  def save!
+    save
   end
   def save
-    cuprium_store.transaction do
-      cuprium_store[:accounts] ||= Array.new
-      cuprium_store[:accounts].delete_if { |acc| acc.number == self.number }
-      cuprium_store[:accounts] << self
+    if valid?
+      cuprium_store.transaction do
+        cuprium_store[:accounts] ||= Array.new
+        cuprium_store[:accounts].delete_if { |acc| acc.number == self.number }
+        cuprium_store[:accounts] << self
+      end
     end
+    true
   end
   def self.all
     cuprium_store.transaction(true) do
@@ -45,6 +53,9 @@ class Account
   end
   def persisted?
     false
+  end
+  def == other
+    number == other.number
   end
   # Pull cuprium_store into its own class later
   private

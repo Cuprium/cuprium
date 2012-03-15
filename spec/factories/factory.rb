@@ -7,4 +7,15 @@ FactoryGirl.define do
     data_manager.last_name 'Test'
     data_manager.title_id 1
   end
+  factory :account do |account|
+    account.number "test-acc-1"
+    account.owner "test-ownder-1"
+    account.type "share"
+    account.balance 500
+  end
+  factory :payment do |payment|
+    payment.amount 0.00
+    payment.direction "payment"
+    payment.account "test-acc-1"
+  end
 end

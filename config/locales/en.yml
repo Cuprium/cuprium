@@ -11,6 +11,7 @@ en:
   balance: Balance
   of: of
   made_to: made to
+  debit_balance_not_allowed: withdrawal would put this account over the debit limit
 
   data_manager:
     welcome: Welcome Data Manager
