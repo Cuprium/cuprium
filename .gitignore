@@ -17,3 +17,4 @@
 *.pstore
 
 vendor/cache
+database.yml
