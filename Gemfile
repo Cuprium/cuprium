@@ -27,7 +27,7 @@ gem 'jquery-rails'
 group :development do
   gem 'ruby-debug19'
   gem 'capistrano'
-  gem 'capistrano-ext'
+  # gem 'capistrano-ext'
   gem 'annotate'
 end
 
@@ -35,7 +35,6 @@ group :development, :test do
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard-rspec'
   gem 'growl'
-  # gem 'ruby_gntp'
 end
 
 group :test, :cucumber do
@@ -54,7 +53,7 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
