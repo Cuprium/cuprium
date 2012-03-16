@@ -195,7 +195,6 @@ DEPENDENCIES
   capistrano
   capybara
   devise
-  execjs
   factory_girl
   growl
   guard-rspec
