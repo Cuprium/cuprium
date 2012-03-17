@@ -2,7 +2,7 @@
 set -e
 # Example init script, this can be used with nginx, too,
 # since nginx and unicorn accept the same signals
-
+export RAILS_ENV=production
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/usr/share/nginx/cuprium.railsbaby.com/current
