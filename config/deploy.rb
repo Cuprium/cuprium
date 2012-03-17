@@ -29,6 +29,7 @@ server "#{server_name}", :app, :web, :db, :primary => true
 namespace :deploy do
 
   after "deploy:finalize_update", "deploy:config:link_database_config"
+  after "deploy:finalize_update", "deploy:config:link_pstore"
 
   namespace :config do
 
@@ -36,6 +37,19 @@ namespace :deploy do
     task :link_database_config do
       sudo "ln -nfs #{deploy_to}/database.yml #{release_path}/config/database.yml"
     end 
+    desc "set up the pstore share"
+    task :link_pstore do
+      sudo "touch #{deploy_to}/shared/cuuprium_store.pstore"
+      sudo "ln -nfs #{deploy_to}/shared/cuuprium_store.pstore #{release_path}"
+      run("cd #{deploy_to}/current && /usr/bin/env rake db:seed RAILS_ENV=production")
+    end 
+    desc "reset pstore"
+    task :reset_pstore do
+      sudo "rm #{deploy_to}/shared/cuuprium_store.pstore"
+      sudo "touch #{deploy_to}/shared/cuuprium_store.pstore"
+      sudo "ln -nfs #{deploy_to}/shared/cuuprium_store.pstore #{release_path}"
+      run("cd #{deploy_to}/current && /usr/bin/env rake db:seed RAILS_ENV=production")      
+    end
 
   end
 
