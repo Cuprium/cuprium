@@ -49,7 +49,7 @@ namespace :deploy do
       sudo "service cuprium_unicorn stop"    
     end
     desc "restart"
-    task :stop do
+    task :restart do
       # Note that we stop and start in case the current directory symlink has changed
       # sometimes it keeps the old file handle so a clean stop/start seems better
       sudo "service cuprium_unicorn stop; sleep 5; service cuprium_unicorn start"    
@@ -66,7 +66,7 @@ namespace :deploy do
       sudo "service nginx stop"    
     end
     desc "restart"
-    task :stop do
+    task :restart do
       sudo "service nginx restart"    
     end
   end
