@@ -52,7 +52,9 @@ namespace :deploy do
     task :restart do
       # Note that we stop and start in case the current directory symlink has changed
       # sometimes it keeps the old file handle so a clean stop/start seems better
-      sudo "service cuprium_unicorn stop; sleep 5; service cuprium_unicorn start"    
+      sudo "service cuprium_unicorn stop"
+      sleep 5
+      sudo "service cuprium_unicorn start"    
     end
   end
 
@@ -82,6 +84,7 @@ namespace :setup do
   task :unicorn do
     sudo "ln -nfs #{deploy_to}/current/config/unicorn_init.sh /etc/init.d/cuprium_unicorn"
     sudo "service cuprium_unicorn stop"    
+    sleep 5
     sudo "service cuprium_unicorn start"    
   end
 end
