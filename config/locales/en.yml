@@ -12,6 +12,7 @@ en:
   of: of
   made_to: made to
   debit_balance_not_allowed: withdrawal would put this account over the debit limit
+  payment_must_be_credit_or_debit: payment direction must be credit (1) or debit (-1)
 
   data_manager:
     welcome: Welcome Data Manager

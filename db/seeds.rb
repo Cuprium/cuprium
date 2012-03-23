@@ -9,3 +9,7 @@
 dm = DataManager.create!(email:'example@cuprium.org',password:'example1234',password_confirmation:'example1234',first_name:'Test',last_name:'Test',title_id:1) if DataManager.find_by_email('example@cuprium.org').blank?
 
 (1..5).each { |acc| Account.new(number:"acc#{acc}",owner:"test#{acc}",type:"share").save } if Account.all.blank?
+
+[ {name:'payment',direction:1},
+  {name:'withdrawal',direction:-1},
+].each { |entry| Entry.new(entry).save }

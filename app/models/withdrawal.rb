@@ -3,9 +3,9 @@ require 'pstore'
 require 'account'
 require 'entry'
 require 'ledger'
-class Payment < Ledger
+class Withdrawal < Ledger
   def self.entry
-    Entry.find 'payment'
+    Entry.find 'withdrawal'
   end
   def initialize(params={})
     super

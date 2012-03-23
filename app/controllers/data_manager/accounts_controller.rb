@@ -15,8 +15,8 @@ class DataManager::AccountsController < DataManager::CommonController
   def redirect_to_derived_path id, on_select
     return false unless id.present? && on_select.present?
     case on_select
-    when 'payment', 'withdrawal'
-      redirect_to new_data_manager_payment_path(direction:on_select,account_number:id)
+    when 'Payment', 'Withdrawal'
+      redirect_to new_data_manager_payment_path(name:on_select,account_number:id)
     end
     true
   end

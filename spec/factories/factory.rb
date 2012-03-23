@@ -15,7 +15,21 @@ FactoryGirl.define do
   end
   factory :payment do |payment|
     payment.amount 0.00
-    payment.direction "payment"
     payment.account "test-acc-1"
+  end
+  factory :withdrawal do |withdrawal|
+    withdrawal.amount 0.00
+    withdrawal.account "test-acc-1"
+  end
+  factory :ledger do |ledger|
+    ledger.amount 0.00
+    ledger.account "test-acc-1"
+    ledger.after_build do |thing|
+      ledger.entry Factory.build(:entry)
+    end
+  end
+  factory :entry do |entry|
+    entry.direction 1
+    entry.name "payment"
   end
 end
