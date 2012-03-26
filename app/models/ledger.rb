@@ -42,8 +42,8 @@ class Ledger
     raise NoEntry if entry.blank?
     if valid?
       cuprium_store.transaction do
-        cuprium_store[:payments] ||= Array.new
-        cuprium_store[:payments] << self
+        cuprium_store[:ledger_entries] ||= Array.new
+        cuprium_store[:ledger_entries] << self
         accounts = cuprium_store[:accounts]
         account = accounts.find { |acc| acc.number == self.account }
         if account
