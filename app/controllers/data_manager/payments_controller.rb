@@ -11,6 +11,7 @@ class DataManager::PaymentsController < DataManager::CommonController
   end
   private
   def ledger_class
+    # The name is the name of the transaction type, e.g. Payment or Withdrawal etc.
     @ledger_class ||= (params[:name] || params[:payment][:name]).titleize.constantize
   end
 end
