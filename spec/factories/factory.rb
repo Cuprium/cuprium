@@ -1,6 +1,6 @@
 FactoryGirl.define do 
   factory :data_manager do |data_manager|
-    # The seeded emaul is example@ - so we use something different
+    # The seeded email is example@ - so we use something different
     data_manager.email        "example.main@cuprium.org"
     data_manager.password          "example1234"
     data_manager.password_confirmation          "example1234"
