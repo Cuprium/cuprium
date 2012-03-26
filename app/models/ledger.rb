@@ -8,13 +8,21 @@ class Ledger
   extend ActiveModel::Naming
   include CupriumStore
 
+  class NoEntry < StandardError 
+    def initialize(*args)
+      super I18n.translate(:cannot_create_a_ledger_entry_without_a_type)
+    end
+  end
+
   attr_accessor :amount, :account, :entry, :transaction
+
   validates_presence_of :amount, :account, :entry
   validates_numericality_of :amount, greater_than: 0
 
   validate :debit_account_allowed
   def initialize(values={})
     @amount, @account, @entry = values[:amount].to_f, values[:account], values[:entry]
+    self
   end
   def name
     entry.name
@@ -22,7 +30,16 @@ class Ledger
   def name= dummy
     # Do nothing because the entry name is fixed, but we want forms to render
   end
+
+  # TODO !Important! ban updates 
+
+  def self.entry
+    Entry.find self.to_s.underscore
+  end
+
   def save
+    self.entry = self.class.entry
+    raise NoEntry if entry.blank?
     if valid?
       cuprium_store.transaction do
         cuprium_store[:payments] ||= Array.new

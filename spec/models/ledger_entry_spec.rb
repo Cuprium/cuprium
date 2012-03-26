@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe LedgerEntry do
 
+  # We're testing payments and withdrawals here because you can't save a ledger
+  # entry without a type
   let(:account) { create :account }
   let(:ledger_credit) { build( :payment, amount: 1, account: account ) }
   let(:ledger_debit) { build( :withdrawal, amount: 1, account: account ) }
@@ -17,6 +19,11 @@ describe LedgerEntry do
     it "amount greater than 0" do
       ledger_credit.amount = 0.00
       ledger_credit.should_not be_valid
+    end
+    it "won't allow save without an entry type" do
+      lambda { 
+        Ledger.new.save
+      }.should raise_exception Ledger::NoEntry
     end
   end
 
