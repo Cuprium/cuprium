@@ -24,6 +24,7 @@ class Ledger
     @amount, @account, @entry = values[:amount].to_f, values[:account], values[:entry]
     self
   end
+  
   def name
     entry.name
   end
@@ -38,8 +39,10 @@ class Ledger
   end
 
   def save
+    puts self.class.name
     self.entry = self.class.entry
     raise NoEntry if entry.blank?
+    puts self.inspect
     if valid?
       cuprium_store.transaction do
         cuprium_store[:ledger_entries] ||= Array.new

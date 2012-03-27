@@ -37,7 +37,7 @@ describe LedgerEntry do
     it "should decrease balance for withdrawal" do
       account.save
       old_balance = account.balance
-      ledger_debit.save
+      ledger_debit.save.should == true
       changed_account = Account.find account.number
       changed_account.balance.should == old_balance - ledger_debit.amount
     end
