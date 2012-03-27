@@ -1,6 +1,6 @@
 # This class coordinates the movement of money between accounts
 # it creates the master Transaction with the correct references in it
-class Transfer < Transaction
+class Transfer
 
   class SameAccount < StandardError 
     def initialize(*args)
@@ -28,11 +28,10 @@ class Transfer < Transaction
     raise NilAccount if from_account.blank? || to_account.blank?
     raise SameAccount if from_account == to_account
     raise InvalidAmount if amount.blank? || amount.to_f <= 0.0
-    transact do |transaction,cuprium_store|
-      puts "block"
-      transaction.activity = self.class.to_s
-      cuprium_store.abort unless TransferIn.new(amount:amount,transaction:transaction.number,account:to_account).save &&
-        TransferOut.new(amount:amount,transaction:transaction.number,account:from_account).save
+    transaction = Transaction.new(activity:self.class.to_s)
+    transaction.transact do |transaction|
+      raise ActiveRecord::Rollback unless TransferIn.create(amount:amount,transaction:transaction,account:to_account) &&
+        TransferOut.create(amount:amount,transaction:transaction,account:from_account)
     end
     self
   end

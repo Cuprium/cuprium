@@ -44,5 +44,5 @@ end
 [ {name:'payment',direction:1},
   {name:'withdrawal',direction:-1},
   {name:'transfer_in',direction:1},
-  {name:'tramsfer_out',direction:-1},
+  {name:'transfer_out',direction:-1},
 ].each { |entry| Entry.find_by_name(entry[:name]) || Entry.create(entry) }

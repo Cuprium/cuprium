@@ -22,8 +22,8 @@ describe LedgerEntry do
     end
     it "won't allow save without an entry type" do
       lambda { 
-        Ledger.new.save
-      }.should raise_exception Ledger::NoEntry
+        LedgerEntry.new.save
+      }.should raise_exception LedgerEntry::NoEntry
     end
   end
 

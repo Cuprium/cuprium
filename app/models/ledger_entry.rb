@@ -2,18 +2,25 @@
 # The child classes have an entry type that determines the direction of the money flow
 class LedgerEntry < ActiveRecord::Base
 
+ class NoEntry < StandardError 
+    def initialize(*args)
+      super I18n.translate(:cannot_create_a_ledger_entry_without_a_type)
+    end
+ end
+
   validates_presence_of :amount, :account, :entry_id
   validates_numericality_of :amount, greater_than: 0
 
   validate :debit_account_allowed
 
-  attr_accessible  :amount, :account, :entry_id
+  attr_accessible  :amount, :account, :entry_id, :transaction
 
   belongs_to :account
   belongs_to :entry
+  belongs_to :transaction
   
   before_validation(:on => :create) do
-    self.entry = Entry.find self.class.name.underscore
+    self.entry = Entry.find self.class.name.underscore rescue ActiveRecord::RecordNotFoundError raise NoEntry
   end
 
   before_save(:on => :create) do
