@@ -12,4 +12,6 @@ dm = DataManager.create!(email:'example@cuprium.org',password:'example1234',pass
 
 [ {name:'payment',direction:1},
   {name:'withdrawal',direction:-1},
-].each { |entry| Entry.new(entry).save }
+  {name:'transfer_in',direction:1},
+  {name:'tramsfer_out',direction:-1},
+].each { |entry| Entry.create(entry) }
