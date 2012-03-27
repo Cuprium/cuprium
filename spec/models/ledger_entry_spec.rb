@@ -1,16 +1,18 @@
 require 'spec_helper'
 
-describe Ledger do
+describe LedgerEntry do
 
   let(:account) { create :account }
-  let(:credit) { create :entry, direction: 1 }
-  let(:ledger_credit) { build( :ledger, amount: 1, account: account.number, entry: credit ) }
-  let(:debit) { create :entry, direction: -1, name:"debit" }
-  let(:ledger_debit) { build( :ledger, amount: 1, account: account.number, entry: debit ) }
+  let(:ledger_credit) { build( :payment, amount: 1, account: account ) }
+  let(:ledger_debit) { build( :withdrawal, amount: 1, account: account ) }
 
   context "valdation" do
-    [:amount, :account, :entry].each do |col|
-      it { should validate_presence_of col }
+    [:amount, :account_id].each do |col|
+      it "should validate_presence_of #{col}" do
+         ledger_credit.should be_valid
+         ledger_credit[col] = nil
+         ledger_credit.should_not be_valid
+       end
     end
     it "amount greater than 0" do
       ledger_credit.amount = 0.00

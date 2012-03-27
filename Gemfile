@@ -25,7 +25,6 @@ end
 gem 'jquery-rails'
 
 group :development do
-  gem 'ruby-debug19'
   gem 'capistrano'
   # gem 'capistrano-ext'
   gem 'annotate'
@@ -33,6 +32,7 @@ end
 
 group :development, :test do
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'ruby-debug19'
   gem 'guard-rspec'
   gem 'growl'
 end

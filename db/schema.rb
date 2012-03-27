@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327082152) do
+ActiveRecord::Schema.define(:version => 20120327134315) do
+
+  create_table "accounts", :id => false, :force => true do |t|
+    t.string   "number",                                     :null => false
+    t.string   "owner",                                      :null => false
+    t.string   "type",                                       :null => false
+    t.decimal  "balance",     :precision => 14, :scale => 2, :null => false
+    t.decimal  "debit_limit", :precision => 14, :scale => 2, :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+  end
+
+  add_index "accounts", ["number"], :name => "index_accounts_on_number", :unique => true
 
   create_table "data_managers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -40,6 +52,16 @@ ActiveRecord::Schema.define(:version => 20120327082152) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  add_index "entries", ["name"], :name => "index_entries_on_name", :unique => true
+
+  create_table "ledger_entries", :force => true do |t|
+    t.decimal  "amount",     :precision => 14, :scale => 2, :null => false
+    t.string   "account_id",                                :null => false
+    t.string   "entry_id",                                  :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
 end

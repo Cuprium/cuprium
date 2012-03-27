@@ -22,11 +22,11 @@ FactoryGirl.define do
     withdrawal.amount 0.00
     withdrawal.account "test-acc-1"
   end
-  factory :ledger do |ledger|
-    ledger.amount 0.00
-    ledger.account "test-acc-1"
-    ledger.after_build do |thing|
-      ledger.entry Factory.build(:entry)
+  factory :ledger_entry do |ledger_entry|
+    ledger_entry.amount 0.00
+    ledger_entry.account "test-acc-1"
+    ledger_entry.after_build do |thing|
+      ledger_entry.entry Factory.build(:entry)
     end
   end
   factory :entry do |entry|

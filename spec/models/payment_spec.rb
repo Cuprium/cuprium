@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Payment do
 
   let(:account) { create :account }
-  let(:payment) { build( :payment, amount: 1, account: account.number ) }
+  let(:payment) { build( :payment, amount: 1, account: account ) }
 
   context "valdation" do
     [:amount, :account ].each do |col|

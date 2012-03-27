@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Withdrawal do
 
   let(:account) { create :account }
-  let(:withdrawal) { build( :withdrawal, amount: 1, account: account.number ) }
+  let(:withdrawal) { build( :withdrawal, amount: 1, account: account ) }
 
   context "valdation" do
     [:amount, :account ].each do |col|
@@ -17,11 +17,11 @@ describe Withdrawal do
 
   context "account balance" do
     it "should decrease balance for withdrawal" do
-      account.save
+      account.save!
       old_balance = account.balance
-      withdrawal.save
-      changed_account = Account.find account.number
-      changed_account.balance.should == old_balance - withdrawal.amount
+      withdrawal.save!
+      account.reload
+      account.balance.should == old_balance - withdrawal.amount
     end
     it "should block balance update if allow_debit is false" do
       account.save
