@@ -1,10 +1,10 @@
 class CreateCurrencies < ActiveRecord::Migration
   def change
     create_table :currencies, id:false do |t|
-      t.string :code
-      t.string :iso_number
-      t.string :name
-      t.integer :decimal_places
+      t.string :code, null:false
+      t.string :iso_numberm, null:false
+      t.string :name, null:false
+      t.integer :decimal_places, null:false
 
       t.timestamps
     end
