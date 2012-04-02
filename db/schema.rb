@@ -11,19 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327155223) do
+ActiveRecord::Schema.define(:version => 20120402122948) do
 
   create_table "accounts", :id => false, :force => true do |t|
-    t.string   "number",                                     :null => false
-    t.string   "owner",                                      :null => false
-    t.string   "type",                                       :null => false
-    t.decimal  "balance",     :precision => 14, :scale => 2, :null => false
-    t.decimal  "debit_limit", :precision => 14, :scale => 2, :null => false
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.string   "number",                                       :null => false
+    t.string   "owner",                                        :null => false
+    t.string   "type",                                         :null => false
+    t.decimal  "balance",       :precision => 14, :scale => 2, :null => false
+    t.decimal  "debit_limit",   :precision => 14, :scale => 2, :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.string   "currency_code"
   end
 
   add_index "accounts", ["number"], :name => "index_accounts_on_number", :unique => true
+
+  create_table "currencies", :id => false, :force => true do |t|
+    t.string   "code"
+    t.string   "iso_number"
+    t.string   "name"
+    t.integer  "decimal_places"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "currencies", ["code"], :name => "index_currencies_on_code", :unique => true
 
   create_table "data_managers", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

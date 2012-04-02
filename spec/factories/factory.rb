@@ -10,7 +10,8 @@ FactoryGirl.define do
   end
   factory :account do |account|
     account.number "test-acc-1"
-    account.owner "test-ownder-1"
+    account.owner "test-owner-1"
+    account.currency_code 'GBP'
     account.type "share"
     account.balance 500
   end
