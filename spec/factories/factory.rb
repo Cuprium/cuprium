@@ -34,4 +34,15 @@ FactoryGirl.define do
     entry.direction 1
     entry.name "payment"
   end
+  factory :currency do |currency|
+    currency.code "XXX"
+    currency.name "Test"
+    currency.decimal_places 2
+    currency.iso_number "0101"
+  end
+  factory :currency_conversion do |currency_conversion|
+    currency_conversion.currency_code "XXX"
+    currency_conversion.valid_from Date.today
+    currency_conversion.factor 1.5
+  end
 end

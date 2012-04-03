@@ -21,6 +21,10 @@ class Account < ActiveRecord::Base
     self.search = ""
   end
 
+  def current_conversion
+    CurrencyConversion.find_current_converter currency_code
+  end
+
   # TODO: This needs to be rewritten to use scopes properly
   def self.filter_by number_or_owner
     if number_or_owner.present?
