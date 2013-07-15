@@ -31,7 +31,7 @@ en:
       withdrawals: Withdrawals
       transfers: Transfers
       loans: Loans
-      members: Members
+      clients: Clients
       escrow: Escrow
 
     payments_menu: 
