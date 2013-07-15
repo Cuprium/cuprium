@@ -7,8 +7,11 @@ en:
   search: Search
   processing: "Processing ..."
   account: Account
+  create: "Create %{name}"
 
   balance: Balance
+  payment: Payment
+  client: Client
   of: of
   made_to: made to
   debit_balance_not_allowed: withdrawal would put this account over the debit limit
@@ -43,6 +46,10 @@ en:
 
     pick_account_payment: "Pick account for payment"
     pick_account_withdrawal: "Pick account for withdrawal"
+
+    clients_menu: 
+      title: Clients
+      new_client: Create new client
 
   helpers:
     button:

@@ -7,6 +7,7 @@ Cuprium::Application.routes.draw do
   namespace :data_manager do
     root to: 'home#index'
     resources :payments, only: [:index,:new,:create]
+    resources :clients
     resources :accounts, only: [:index] do
       collection do
         match '/search' => 'accounts#search'

@@ -2,7 +2,7 @@
   <p>
     <%= "#{@payment.name.capitalize} : #{@account.owner} : #{@account.number} : #{@account.type}"  %>  
   </p>
-  <%= form_for @payment, url: data_manager_payments_path(@payment), html: {class: 'form-horizontal'} do |form| %>
+  <%= form_for [:data_manager,@payment], html: {class: 'form-horizontal'} do |form| %>
     <%= form.hidden_field :name %> 
     <%= form.hidden_field :account_id, { class: 'input-xlarge' }  %> 
     <fieldset>
@@ -13,8 +13,12 @@
        </div>
       </div>
       <div class="control-group">
-        <div class="controls"><%= form.button "Create #{@payment.name.capitalize}", disable_with: "Processing ..." %> </div>
+        <div class="controls"><%= form.button t(:create,name:t(@payment.name.to_sym)), disable_with: t(:processing) %> </div>
       </div>
     </fieldset>
   <% end %>
 </div>
+<%= content_for :errors do %>
+  <%= render "shared/form_errors", :object => @payment %>
+<% end %>
+
