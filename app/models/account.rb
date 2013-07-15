@@ -11,6 +11,8 @@ class Account < ActiveRecord::Base
   attr_accessible :number, :owner, :type, :balance, :debit_limit, :search
 
   before_create :default_values
+  
+  has_many :ledger_entries
 
   def default_values
     self.balance ||= 0.00

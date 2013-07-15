@@ -13,20 +13,21 @@ class LedgerEntry < ActiveRecord::Base
 
   validate :debit_account_allowed
 
-  attr_accessible  :amount, :account, :entry_id, :transaction
+  attr_accessible  :amount, :account, :entry_id, :transaction, :name, :account_id
 
   belongs_to :account
   belongs_to :entry
   belongs_to :transaction
   
-  before_validation(:on => :create) do
-    self.entry = Entry.find self.class.name.underscore rescue ActiveRecord::RecordNotFoundError raise NoEntry
-  end
-
   before_save(:on => :create) do
     balance_adjustment = (self.amount * entry.direction)
     account.balance += balance_adjustment
     account.save!
+  end
+  
+  def initialize(*args)
+    super
+    self.entry ||= Entry.find self.class.name.underscore rescue ActiveRecord::RecordNotFoundError raise NoEntry
   end
 
   def name
