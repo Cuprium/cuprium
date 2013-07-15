@@ -30,7 +30,6 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.7)
     annotate (2.4.0)
-    archive-tar-minitar (0.5.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -51,6 +50,12 @@ GEM
       ffi (~> 1.0.6)
     columnize (0.3.6)
     crack (0.3.1)
+    debugger (1.6.1)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.3)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -79,8 +84,6 @@ GEM
     json (1.6.5)
     kgio (2.7.3)
     libv8 (3.3.10.4)
-    linecache19 (0.5.12)
-      ruby_core_source (>= 0.1.4)
     mail (2.4.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -137,16 +140,6 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
-    ruby-debug-base19 (0.11.25)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
-    ruby_core_source (0.1.5)
-      archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.6.1)
     sass (3.1.15)
     sass-rails (3.2.4)
@@ -193,6 +186,7 @@ DEPENDENCIES
   annotate
   capistrano
   capybara
+  debugger
   devise
   factory_girl
   growl
@@ -202,7 +196,6 @@ DEPENDENCIES
   rails (= 3.2.2)
   rake
   rspec-rails
-  ruby-debug19
   sass-rails (~> 3.2.3)
   shoulda-matchers
   therubyracer

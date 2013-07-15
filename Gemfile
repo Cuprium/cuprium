@@ -32,7 +32,7 @@ end
 
 group :development, :test do
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  gem 'ruby-debug19'
+  gem 'debugger'
   gem 'guard-rspec'
   gem 'growl'
 end
