@@ -11,6 +11,9 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'debugger'
+gem 'pry-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -32,7 +35,6 @@ end
 
 group :development, :test do
   # gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  gem 'debugger'
   gem 'guard-rspec'
   gem 'growl'
 end
