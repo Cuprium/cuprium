@@ -40,11 +40,13 @@ group :development, :test do
 end
 
 group :test, :cucumber do
+  gem 'cucumber-rails'
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'webmock'
+  gem 'database_cleaner'
 end
 
 
