@@ -36,7 +36,7 @@ RSpec.configure do |config|
 
   config.include WebMock::API
 
-  config.include Factory::Syntax::Methods
+  config.include FactoryGirl::Syntax::Methods
 
   config.extend ControllerMacros, :type => :controller
 end
