@@ -12,7 +12,6 @@ gem 'pg'
 gem 'devise'
 
 gem 'debugger'
-gem 'pry-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +27,8 @@ end
 gem 'jquery-rails'
 
 group :development do
+  gem 'pry-rails'
+  gem 'pry-doc'
   gem 'capistrano'
   # gem 'capistrano-ext'
   gem 'annotate'
