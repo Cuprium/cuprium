@@ -235,6 +235,7 @@ DEPENDENCIES
   annotate
   capistrano
   capybara
+  cucumber
   cucumber-rails
   database_cleaner
   debugger

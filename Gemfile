@@ -42,6 +42,7 @@ group :development, :test do
 end
 
 group :test, :cucumber do
+  gem 'cucumber', require: false
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'shoulda-matchers'
