@@ -32,6 +32,7 @@ group :development do
   gem 'capistrano'
   # gem 'capistrano-ext'
   gem 'annotate'
+  gem 'guard-cucumber'
 end
 
 group :development, :test do
