@@ -41,6 +41,7 @@ module Cuprium
 
     config.generators do |g| 
       g.test_framework :rspec
+      g.fixture_replacement :factory_girl
     end 
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
