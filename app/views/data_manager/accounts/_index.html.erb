@@ -1,4 +1,4 @@
-<div class="span6">
+<div class="span6" id="account-index">
   <% @accounts.each do |account| -%>
     <p>
       <%= link_to "#{account.owner} : #{account.number} : #{account.type} : #{account.balance}", select_data_manager_account_path(account.number,@on_select) %>
