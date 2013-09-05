@@ -7,7 +7,7 @@ When(/^I fill in the client information$/) do
   fill_in "client_address3", with: "Address 3"
   fill_in "client_town", with: "Test Town"
   fill_in "client_postcode", with: "xx99 9yy"
-  fill_in "client_email", with: "test.client@cuprium.com"
+  fill_in "client_email", with: "test.client@cuprium.org"
 end
 
 Then(/^I should see the client information$/) do
@@ -19,5 +19,5 @@ Then(/^I should see the client information$/) do
   body.should match(Regexp.new( "Address 3" ))
   body.should match(Regexp.new( "Test Town" ))
   body.should match(Regexp.new( "xx99 9yy" ))
-  body.should match(Regexp.new( "test.client@cuprium.com" ))
+  body.should match(Regexp.new( "test.client@cuprium.org" ))
 end
