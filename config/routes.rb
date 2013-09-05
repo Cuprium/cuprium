@@ -7,6 +7,7 @@ Cuprium::Application.routes.draw do
   namespace :data_manager do
     root to: 'home#index'
     resources :payments, only: [:index,:new,:create]
+    resources :withdrawals, only: [:index,:new,:create], controller: 'payments'
     resources :clients
     resources :accounts, only: [:index] do
       collection do
