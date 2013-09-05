@@ -6,8 +6,9 @@ class DataManager::PaymentsController < DataManager::CommonController
   end
   def create
     @payment = ledger_class.new trans_type
-    @payment.save!
+    @payment.save
     @account = Account.find @payment.account
+    respond_with @payment
   end
   private
   def ledger_class
