@@ -2,11 +2,11 @@
 # The child classes have an entry type that determines the direction of the money flow
 class LedgerEntry < ActiveRecord::Base
 
- class NoEntry < StandardError 
+  class NoEntry < StandardError 
     def initialize(*args)
-      super I18n.translate(:cannot_create_a_ledger_entry_without_a_type)
+      super I18n.translate(:cannot_create_a_ledger_entry_without_a_type) + " " + self.class.name.underscore
     end
- end
+  end
 
   validates_presence_of :amount, :account, :entry_id
   validates_numericality_of :amount, greater_than: 0
