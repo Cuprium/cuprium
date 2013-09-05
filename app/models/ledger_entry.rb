@@ -18,6 +18,8 @@ class LedgerEntry < ActiveRecord::Base
   belongs_to :account
   belongs_to :entry
   belongs_to :transaction
+
+  delegate :currency_code, to: :account
   
   before_save(:on => :create) do
     balance_adjustment = (self.amount * entry.direction)

@@ -8,6 +8,11 @@ describe LedgerEntry do
   let(:ledger_credit) { build( :payment, amount: 1, account: account ) }
   let(:ledger_debit) { build( :withdrawal, amount: 1, account: account ) }
 
+  it "#currency_code" do
+    ledger_debit.currency_code.should == account.currency_code
+    ledger_credit.currency_code.should == account.currency_code
+  end
+
   context "valdation" do
     [:amount, :account_id].each do |col|
       it "should validate_presence_of #{col}" do
