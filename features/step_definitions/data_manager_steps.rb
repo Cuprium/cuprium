@@ -45,5 +45,17 @@ Given(/^I enter (\d+\.\d\d) in ([^ ]+) amount$/) do |amount, type|
 end
 
 Then(/^I should see "(.*?)"$/) do |thing|
-  body.match Regexp.new(thing)
+  if thing[0] == ':'
+    thing = I18n.t thing
+  end
+  body.should match Regexp.new(thing)
+end
+
+Then(/^I should see :(.*?)$/) do |thing|
+  thing = I18n.t thing
+  body.should match Regexp.new(thing)
+end
+
+When(/^I dump the response/) do
+  puts body
 end
