@@ -1,12 +1,17 @@
 <div class="span6">
-  <p>
   <% if @payment.valid? -%>
-    <%= t :"#{@payment.name.downcase}" %> <%= t :of %> <%= @payment.amount %> <%= t :made_to %> <%= @payment.account.number %>
+    <p>
+      <%= t @payment.name.downcase %> <%= t :of %> <%= @payment.display_amount.html_safe %> <%= t :made_to %> <%= @payment.account.number %>
+    </p>
   <% else -%>
-    <%= @payment.errors.full_messages.join('<br />') %>
+    <p>
+      <%= t :failed  %> <%= t @payment.name.downcase %> <%= t :of %> <%= @payment.display_amount.html_safe %> <%= t :made_to %> <%= @payment.account.number %>
+    </p>
+    <p>
+      <%= @payment.errors.full_messages.join('<br />') %>
+    </p>
   <% end -%>
-  </p>
   <p>
-    <%= t :balance %> <%= @account.balance %>
+    <%= t :balance %> <%= @account.display_balance.html_safe %>
   </p>
 </div>

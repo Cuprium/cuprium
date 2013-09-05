@@ -34,4 +34,7 @@ class Account < ActiveRecord::Base
     number
   end
 
+  def display_balance
+    Currency.display_currency currency_code, balance
+  end
 end

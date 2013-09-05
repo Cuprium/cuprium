@@ -49,4 +49,7 @@ class LedgerEntry < ActiveRecord::Base
       true
     end
   end
+  def display_amount
+    Currency.display_currency currency_code, amount
+  end
 end
