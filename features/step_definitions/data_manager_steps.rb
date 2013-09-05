@@ -40,8 +40,8 @@ Then(/^I should see account "(.*?)"$/) do |account_number|
   body.should match(Regexp.new(account_number))
 end
 
-Given(/^I enter (\d+\.\d\d) in the amount$/) do |amount|
-  fill_in "payment_amount", with: amount
+Given(/^I enter (\d+\.\d\d) in ([^ ]+) amount$/) do |amount, type|
+  fill_in "#{type}_amount", with: amount
 end
 
 Then(/^I should see "(.*?)"$/) do |thing|
