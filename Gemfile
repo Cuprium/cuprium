@@ -29,6 +29,7 @@ gem 'jquery-rails'
 group :development do
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'pry-debugger'
   gem 'capistrano'
   # gem 'capistrano-ext'
   gem 'annotate'
@@ -41,8 +42,10 @@ group :development, :test do
   gem 'growl'
 end
 
-group :test, :cucumber do
+group :test do
   gem 'cucumber', require: false
+end
+group :test, :cucumber do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'shoulda-matchers'

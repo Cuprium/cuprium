@@ -137,6 +137,9 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-debugger (0.2.2)
+      debugger (~> 1.3)
+      pry (~> 0.9.10)
     pry-doc (0.4.6)
       pry (>= 0.9)
       yard (>= 0.8)
@@ -246,6 +249,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   pg
+  pry-debugger
   pry-doc
   pry-rails
   rails (= 3.2.14)
