@@ -23,9 +23,7 @@ describe EmailValidator do
   context "Invalid emails" do
     [
       'test test.com',
-      'test+test@test.com',
       'test-test@test',
-      'test!test@test.org',
       ' test-test@test.co.uk',
       'test@test,com',
       'test.test@test.com ',

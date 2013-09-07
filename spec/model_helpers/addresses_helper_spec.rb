@@ -16,6 +16,7 @@ describe AddressesHelper do
       { from: ' L19QQ', to: 'L1 9QQ' },
       { from: 'LL19 QQ', to: 'LL1 9QQ' },
       { from: 'CH 991 XX', to: 'CH99 1XX' },
+      { from: 'CH99 1XX', to: 'CH99 1XX' },
     ].each do |example|
       it "convert #{example[:from]} to #{example[:to]}" do
         helper.normalise_postcode(example[:from]).should eq example[:to]
@@ -26,7 +27,6 @@ describe AddressesHelper do
     [ { from: 'ch991xx1', to: 'CH991XX1' },
       { from: 'l1999qq', to: 'L1999QQ' },
       { from: 'll19 qqx', to: 'LL19 QQX' },
-      { from: 'CH99 1XX', to: 'CH99 1XX' },
     ].each do |example|
       it "convert #{example[:from]} to #{example[:to]}" do
         helper.normalise_postcode(example[:from]).should eq example[:to]
