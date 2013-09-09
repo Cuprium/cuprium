@@ -1,11 +1,11 @@
 require 'spec_helper'
-class Validatable
+class ValidatablePostcode
   include ActiveModel::Validations
   attr_accessor :postcode
   validates_with PostcodeValidator, attributes: [:postcode]
 end
 describe PostcodeValidator do
-  let(:validator) { Validatable.new }
+  let(:validator) { ValidatablePostcode.new }
   context "Valid postcodes" do
     [
       'CH99 1XX',
