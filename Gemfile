@@ -46,7 +46,7 @@ end
 group :test do
   gem 'cucumber', require: false
 end
-group :test, :cucumber do
+group :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'shoulda-matchers'
