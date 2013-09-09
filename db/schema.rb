@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(:version => 20130715154559) do
   end
 
   create_table "currencies", :id => false, :force => true do |t|
-    t.string   "code"
-    t.string   "iso_number"
-    t.string   "name"
-    t.integer  "decimal_places"
+    t.string   "code",           :null => false
+    t.string   "iso_number",     :null => false
+    t.string   "name",           :null => false
+    t.integer  "decimal_places", :null => false
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(:version => 20130715154559) do
   add_index "data_managers", ["reset_password_token"], :name => "index_data_managers_on_reset_password_token", :unique => true
 
   create_table "entries", :id => false, :force => true do |t|
-    t.integer  "direction"
-    t.string   "name"
+    t.integer  "direction",  :null => false
+    t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

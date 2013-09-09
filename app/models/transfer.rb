@@ -28,12 +28,17 @@ class Transfer
     raise NilAccount if from_account.blank? || to_account.blank?
     raise SameAccount if from_account == to_account
     raise InvalidAmount if amount.blank? || amount.to_f <= 0.0
+
     transaction = Transaction.new(activity:self.class.to_s)
-    transaction.transact do |transaction|
-      raise ActiveRecord::Rollback unless TransferIn.create(amount:amount,transaction:transaction,account:to_account) &&
-        TransferOut.create(amount:amount,transaction:transaction,account:from_account)
+    transaction.transaction do
+      new_amount = to_account.current_conversion.convert(from_account.currency_code,amount)
+      transaction.from_conversion = from_account.current_conversion
+      transaction.to_conversion = to_account.current_conversion
+      raise ActiveRecord::Rollback unless TransferIn.create(amount:new_amount,transaction:transaction,account:to_account) &&
+        TransferOut.create(amount:amount,transaction:transaction,account:from_account) 
+      transaction.save!
     end
-    self
+    transaction
   end
 
 end

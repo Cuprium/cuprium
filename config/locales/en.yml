@@ -17,6 +17,7 @@ en:
   made_to: made to
   debit_balance_not_allowed: withdrawal would put this account over the debit limit
   payment_must_be_credit_or_debit: payment direction must be credit (1) or debit (-1)
+  no_conversion_available: "no conversion available for %{code}"
   failed: FAILED
 
   cannot_transfer_between_the_same_account: cannot transfer between the same account

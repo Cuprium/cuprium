@@ -6,9 +6,11 @@ class Account < ActiveRecord::Base
 
   attr_accessor :search
 
-  validates_presence_of :number, :owner, :type, :balance
+  validates_presence_of :number, :owner, :type, :balance, :currency_code
 
-  attr_accessible :number, :owner, :type, :balance, :debit_limit, :search
+  attr_accessible :number, :owner, :type, :balance, :debit_limit, :search, :currency_code
+
+  belongs_to :currency, foreign_key: :currency_code
 
   before_create :default_values
   
@@ -17,7 +19,12 @@ class Account < ActiveRecord::Base
   def default_values
     self.balance ||= 0.00
     self.debit_limit ||= 0.00
+    self.currency_code ||= Lookup::BaseCurrency
     self.search = ""
+  end
+
+  def current_conversion
+    CurrencyConversion.find_current_converter currency_code
   end
 
   # TODO: This needs to be rewritten to use scopes properly

@@ -1,9 +1,12 @@
 # For now keeping this class out of the database until we know its 
 # shape properly
-Currency = Struct.new(:currency_code, :html_code, :delimiter, :precision) do
-  GBP = new 'GBP', '&pound;', ',', 2
-  EUR = new 'EUR', '&euro;', ',', 2
-  USD = new 'USD', '$', ',', 2
+class Currency < ActiveRecord::Base
+  self.primary_key = :code
+  validates_presence_of :code,:name,:decimal_places,:iso_number
+  has_many :accounts, foreign_key: :currency_code
+  has_many :currency_conversions, foreign_key: :currency_code 
+  attr_accessible :code,:name,:decimal_places,:iso_number
+
   def self.currencies
     @currencies ||= { 'GBP' => GBP, 'EUR' => EUR, 'USD' => USD }
   end
