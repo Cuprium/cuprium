@@ -7,6 +7,7 @@ FactoryGirl.define do
     client.address2 "Test"
     client.address3 "Test"
     client.town "Test"
-    client.postcode "Test"
+    client.postcode "LL19 9XX"
+    client.email "test.client@cuprium.org"
   end
 end
