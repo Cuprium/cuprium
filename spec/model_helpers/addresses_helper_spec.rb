@@ -19,7 +19,7 @@ describe AddressesHelper do
       { from: 'CH99 1XX', to: 'CH99 1XX' },
     ].each do |example|
       it "convert #{example[:from]} to #{example[:to]}" do
-        helper.normalise_postcode(example[:from]).should eq example[:to]
+        helper.normalise_postcode_helper(example[:from]).should eq example[:to]
       end
     end
   end
@@ -29,7 +29,7 @@ describe AddressesHelper do
       { from: 'll19 qqx', to: 'LL19 QQX' },
     ].each do |example|
       it "convert #{example[:from]} to #{example[:to]}" do
-        helper.normalise_postcode(example[:from]).should eq example[:to]
+        helper.normalise_postcode_helper(example[:from]).should eq example[:to]
       end
     end
   end

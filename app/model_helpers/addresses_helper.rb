@@ -1,5 +1,5 @@
 module AddressesHelper
-  def normalise_postcode(pcode)
+  def normalise_postcode_helper(pcode)
     temp_code = pcode.to_s.upcase 
     return temp_code if temp_code =~ PostcodeValidator::VALID_POSTCODE 
     stripped_code = temp_code.gsub(/ /, '')
