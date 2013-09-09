@@ -11,6 +11,10 @@ describe CurrencyConversion do
     [ :currency_code, :valid_from, :factor, ].each  { |col| it { should validate_presence_of col  }}
   end
   context "calculate conversions" do
+    before :all do 
+      create :gbp unless Currency.find_by_code 'GBP'
+      create :gbp_conversion unless CurrencyConversion.find_by_currency_code 'GBP'
+    end
     it "should leave amount the same for same currency" do
       conversion.convert(conversion.currency_code,amount).should == amount
     end

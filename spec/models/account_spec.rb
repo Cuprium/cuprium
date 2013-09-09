@@ -19,7 +19,7 @@ describe Account do
 
   context "filter" do
     before(:each) do
-      account.save
+      account.save!
     end
     it "for the given account number" do
       Account.filter_by(account.number).should == [account]
