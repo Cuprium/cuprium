@@ -15,6 +15,7 @@ describe Account do
 
   context "relationships" do
     it { should belong_to(:currency) }
+    it { should belong_to(:client) }
   end
 
   context "filter" do

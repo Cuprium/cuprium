@@ -11,6 +11,7 @@ class Account < ActiveRecord::Base
   attr_accessible :number, :owner, :type, :balance, :debit_limit, :search, :currency_code
 
   belongs_to :currency, foreign_key: :currency_code
+  belongs_to :client
 
   before_create :default_values
   
