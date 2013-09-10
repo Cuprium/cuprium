@@ -6,7 +6,7 @@ class Account < ActiveRecord::Base
 
   attr_accessor :search
 
-  validates_presence_of :number, :owner, :type, :balance, :currency_code
+  validates_presence_of :number, :owner, :type, :balance, :currency_code, :client_id
 
   attr_accessible :number, :owner, :type, :balance, :debit_limit, :search, :currency_code
 

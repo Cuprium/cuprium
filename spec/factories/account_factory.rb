@@ -1,9 +1,10 @@
 FactoryGirl.define do 
-  factory :account do |account|
-    account.number "test-acc-1"
-    account.owner "test-owner-1"
-    account.type "share"
-    account.balance 500
-    account.currency_code Lookup::BaseCurrency 
+  factory :account do
+    number "test-acc-1"
+    owner "test-owner-1"
+    type "share"
+    balance 500
+    currency_code Lookup::BaseCurrency 
+    client_id 1
   end
 end

@@ -5,7 +5,7 @@ describe Account do
   let(:account) { build( :account ) }
 
   context "valdation" do
-    [:number,:owner,:type,:balance,:currency_code].each do |col|
+    [:number,:owner,:type,:balance,:currency_code,:client_id].each do |col|
       it { should validate_presence_of col }
     end
     it "balance should initialize at 0.00" do
