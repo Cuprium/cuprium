@@ -1,11 +1,11 @@
 require 'spec_helper'
-class Validatable
+class ValidatableEmail
   include ActiveModel::Validations
   attr_accessor :email
   validates_with EmailValidator, attributes: [:email]
 end
 describe EmailValidator do
-  let(:validator) { Validatable.new }
+  let(:validator) { ValidatableEmail.new }
   context "Valid emails" do
     [
       'test@test.com',
