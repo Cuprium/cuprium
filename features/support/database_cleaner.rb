@@ -13,6 +13,8 @@ Before do
     {name:'transfer_in',direction:1},
     {name:'transfer_out',direction:-1},
   ].each { |entry| Entry.find_by_name(entry[:name]) || Entry.create(entry) }
+  # Make sure we have the default currency
+  create(:gbp) unless Currency.find_by_code 'GBP'
 
   DatabaseCleaner.start
 
