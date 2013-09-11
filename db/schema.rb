@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910130755) do
+ActiveRecord::Schema.define(:version => 20130910150512) do
 
   create_table "accounts", :id => false, :force => true do |t|
     t.string   "number",                                       :null => false
@@ -28,17 +28,20 @@ ActiveRecord::Schema.define(:version => 20130910130755) do
   add_index "accounts", ["number"], :name => "index_accounts_on_number", :unique => true
 
   create_table "clients", :force => true do |t|
-    t.integer  "title_id",   :null => false
-    t.string   "first_name", :null => false
-    t.string   "last_name",  :null => false
-    t.string   "address1",   :null => false
+    t.integer  "title_id",      :null => false
+    t.string   "first_name",    :null => false
+    t.string   "last_name",     :null => false
+    t.string   "address1",      :null => false
     t.string   "address2"
     t.string   "address3"
-    t.string   "town",       :null => false
-    t.string   "postcode",   :null => false
+    t.string   "town",          :null => false
+    t.string   "postcode",      :null => false
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.date     "date_of_birth"
+    t.string   "phone"
+    t.string   "alt_phone"
   end
 
   create_table "currencies", :id => false, :force => true do |t|

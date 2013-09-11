@@ -24,6 +24,12 @@ en:
   transfer_needs_both_accounts_to_exist: transfer needs both accounts to exist
   transfer_amount_must_be_greater_than_zero: transfer amount must be greater than zero
   cannot_create_a_ledger_entry_without_a_type: cannot create a ledger entry without a type
+  
+  next_page: Next page
+
+  loan_application:
+    make_loan_application: Make a loan application
+ 
   data_manager:
     welcome: Welcome Data Manager
     index_page_message: Please select which area you want to work in from the menu above.

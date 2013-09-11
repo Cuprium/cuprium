@@ -1,0 +1,85 @@
+<h1><%= t(:make_loan_application,scope: :loan_application)  %></h1>
+<div class="span6">
+  <%= form_for @client, html: {class: 'form-horizontal'} do |form| %>
+    <fieldset>
+      <div class="control-group">
+        <%= form.label :title, class: 'control-label' %>
+        <div class="controls">
+          <%= form.select :title_id, Lookup::TitleList, {}, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :first_name, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :first_name, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :last_name, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :last_name, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :date_of_birth, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :date_of_birth, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :address1, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :address1, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :address2, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :address2, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :address3, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :address3, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :town, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :town, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :postcode, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :postcode, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :email, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :email, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :phone, class: 'control-label' %>
+        <div class="controls">
+          <%= form.text_field :phone, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= form.label :alt_phone, class: 'control-label', text: t(:alt_phone, scope: :public) %>
+        <div class="controls">
+          <%= form.text_field :alt_phone, { class: 'input-xlarge' } %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls"><%= form.button t(:next_page), disable_with: t(:processing) %> </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<%= content_for :errors do %>
+  <%= render "shared/form_errors", :object => @client %>
+<% end %>

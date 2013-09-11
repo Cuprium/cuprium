@@ -1,5 +1,5 @@
 Cuprium::Application.routes.draw do
-
+ 
   get "accounts/search"
 
   devise_for :data_managers
@@ -18,6 +18,10 @@ Cuprium::Application.routes.draw do
       end
     end
   end
+
+  resources :loan_applications, only: [:new,:create]
+
+  resources :clients, only: [:new,:create], controller: 'loan_applications'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
