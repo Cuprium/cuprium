@@ -12,3 +12,4 @@
 //
 //= require_tree .
 //= require common
+//= require jquery_ujs

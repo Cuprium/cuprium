@@ -53,6 +53,9 @@
               <li id="loans_link"><a href="#loans"><%= t(:loans, scope: [:data_manager, :navbar] ) %></a></li>
               <li id="members_link"><a href="<%= data_manager_clients_path%>"><%= t(:clients, scope: [:data_manager, :navbar] ) %></a></li>
               <li id="escrow_link"><a href="#escrow"><%= t(:escrow, scope: [:data_manager, :navbar] ) %></a></li>
+              <li>
+                <%= link_to t(:logout), destroy_data_manager_session_path, method: :delete %>        
+              </li>
             </ul>
             <p class="navbar-text pull-right"><%= t(:logged_in_as) %> <%= current_data_manager.full_name %></p>
           </div><!--/.nav-collapse -->

@@ -2,8 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  copyright: Free and Open Source, Cuprium 2012
+  copyright: Free and Open Source, Cuprium 2013
   logged_in_as: Logged in as
+  logout: Log out
   search: Search
   processing: "Processing ..."
   account: Account

@@ -2,7 +2,7 @@ Cuprium::Application.routes.draw do
  
   get "accounts/search"
 
-  devise_for :data_managers
+  devise_for :data_managers 
 
   namespace :data_manager do
     root to: 'home#index'
