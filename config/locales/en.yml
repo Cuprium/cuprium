@@ -37,6 +37,7 @@ en:
     payments_page_welcome: "Payments and withdrawals"
     left_page_message: Please select activity from the menu on the left
     clients_page_welcome: Clients
+    loan_products_page_welcome: Loan products
 
     navbar:
       title: "Cuprium: Data Manager"
@@ -62,6 +63,10 @@ en:
     clients_menu: 
       title: Clients
       new_client: Create new client
+
+    loan_products_menu:
+      title: Loan Products menu
+      new_loan_product: Create new loan product
 
   helpers:
     button:

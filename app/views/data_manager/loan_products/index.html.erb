@@ -1,0 +1,15 @@
+<div class="span6">
+  <h1><%= t(:loan_products_page_welcome, scope: :data_manager) %></h1>
+  <table class="table table-striped">
+    <tr>
+      <th><%= LoanProduct.human_attribute_name(:name) %></th>
+    </tr>
+    <% for loan_product in @loan_products do %>
+      <tr>
+        <td><%= loan_product.name %></td>
+      </tr>
+    <% end %>
+
+  </table>
+
+</div>

@@ -17,6 +17,6 @@ When(/^I fill in my details$/) do
   fill_in "client_alt_phone", with: "0774567891"
 end
 
-When(/^I fill in the type name with "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I fill in the product name with "(.*?)"$/) do |name|
+  fill_in "loan_product_name", with: name
 end

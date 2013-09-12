@@ -1,5 +1,3 @@
-require 'account'
-require 'payment'
 class DataManager::AccountsController < DataManager::CommonController
   def search
     @account = Account.new(search:params[:search])

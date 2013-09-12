@@ -1,0 +1,19 @@
+<div class="span6">
+  <%= form_for [:data_manager,@loan_product], html: {class: 'form-horizontal'} do |form| %>
+    <fieldset>
+      <div class="control-group">
+       <%= form.label :name, class: 'control-label' %> 
+       <div class="controls">
+         <%= form.text_field :name, { class: 'input-xlarge' } %> 
+       </div>
+      </div>
+      <div class="control-group">
+        <div class="controls"><%= form.submit( disable_with: t(:processing) )%> </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<%= content_for :errors do %>
+  <%= render "shared/form_errors", :object => @loan_product %>
+<% end %>
+
