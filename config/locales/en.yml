@@ -9,6 +9,7 @@ en:
   processing: "Processing ..."
   account: Account
   create: "Create %{name}"
+  created_ok: "%{name} created"
 
   balance: Balance
   payment: Payment
@@ -67,6 +68,9 @@ en:
     loan_products_menu:
       title: Loan Products menu
       new_loan_product: Create new loan product
+
+    loan_product:
+      create_question: Create question
 
   helpers:
     button:

@@ -6,7 +6,7 @@
     </tr>
     <% for loan_product in @loan_products do %>
       <tr>
-        <td><%= loan_product.name %></td>
+        <td><%= link_to loan_product.name, [:data_manager,loan_product] %></td>
       </tr>
     <% end %>
 

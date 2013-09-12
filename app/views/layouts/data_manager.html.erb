@@ -70,6 +70,9 @@
           <div class="span3">
             <%= render partial: 'menu' %>
             <%= yield :errors %>
+            <% if flash[:message] -%>
+              <p id="flash_message"> <%= flash[:message] %> </p>
+            <% end -%>
           </div>
           <%= yield %>
         </div>

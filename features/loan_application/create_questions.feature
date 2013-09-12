@@ -4,9 +4,11 @@ Feature:
   I want to create application questions
   Background: Logged in Data Manager
     Given I am logged in as a Data Manager
+    And loan product called "Test product" exists
     When I click "Loan products"
-  Scenario: Create named loan product
-    Given I click "Create new loan product"
-    When I fill in the product name with "Test product"
-    And I press "Create Loan product"
-    Then I should see "Test product"
+    And I click "Test product"
+  Scenario: Create a question
+    Given I click "Create question" 
+    When I fill in the question details
+    And I press "Create Question"
+    Then I should see "Question created"

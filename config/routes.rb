@@ -9,7 +9,9 @@ Cuprium::Application.routes.draw do
     resources :payments, only: [:index,:new,:create]
     resources :withdrawals, only: [:index,:new,:create], controller: 'payments'
     resources :clients
-    resources :loan_products
+    resources :loan_products do
+      resources :questions
+    end
     resources :accounts, only: [:index] do
       collection do
         match '/search' => 'accounts#search'

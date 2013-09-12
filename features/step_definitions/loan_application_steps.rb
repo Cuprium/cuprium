@@ -1,3 +1,7 @@
+def find_or_create_loan_product_named name
+  @loan_product = LoanProduct.find_by_name(name) || create(:loan_product,name:name)
+end
+
 Given(/^I start from the home screen$/) do
   visit root_path
 end
@@ -20,3 +24,13 @@ end
 When(/^I fill in the product name with "(.*?)"$/) do |name|
   fill_in "loan_product_name", with: name
 end
+
+Given(/^loan product called "(.*?)" exists$/) do |name|
+  find_or_create_loan_product_named name
+end
+
+When(/^I fill in the question details$/) do
+  select '1', from: 'question_page'
+  fill_in "question_text", with: "Some test question text"
+end
+
