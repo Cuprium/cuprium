@@ -36,6 +36,7 @@ en:
     index_page_message: Please select which area you want to work in from the menu above.
     payments_page_welcome: "Payments and withdrawals"
     left_page_message: Please select activity from the menu on the left
+    clients_page_welcome: Clients
 
     navbar:
       title: "Cuprium: Data Manager"

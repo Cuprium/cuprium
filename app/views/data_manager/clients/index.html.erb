@@ -1,21 +1,19 @@
-Welcome to clients index
-
-<table class="table table-striped">
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Address</th>
-    <th>Actions</th>
-  </tr>
-<% for client in @clients do %>
-  <tr>
-    <td><%= client.first_name %></td>
-    <td><%= client.last_name %></td>
-    <td><%= client.address1 %></td>
-    <td>Stuff</td>
-  </tr>
-<% end %>
-
-</table>
-
-
+<div class="span6">
+  <h1><%= t(:clients_page_welcome, scope: :data_manager) %></h1>
+  <table class="table table-striped">
+    <tr>
+      <th><%= Account.human_attribute_name(:first_name) %></th>
+      <th><%= Account.human_attribute_name(:last_name) %></th>
+      <th><%= Account.human_attribute_name(:address1) %></th>
+      <th><%= Account.human_attribute_name(:actions) %></th>
+    </tr>
+    <% for client in @clients do %>
+      <tr>
+        <td><%= client.first_name %></td>
+        <td><%= client.last_name %></td>
+        <td><%= client.address1 %></td>
+        <td>Stuff</td>
+      </tr>
+    <% end %>
+  </table>
+</div>
