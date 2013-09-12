@@ -46,6 +46,7 @@ en:
       loans: Loans
       clients: Clients
       escrow: Escrow
+      loan_products: Loan products
 
     payments_menu: 
       title: Payments Menu
