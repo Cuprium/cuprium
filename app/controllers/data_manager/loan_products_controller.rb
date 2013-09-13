@@ -10,6 +10,14 @@ class DataManager::LoanProductsController < DataManager::CommonController
     @loan_product = LoanProduct.create(params[:loan_product])
     respond_with(:data_manager,@loan_product,location: data_manager_loan_products_url)
   end
+  def edit
+    @loan_product = LoanProduct.find params[:id]
+  end
+  def update
+    @loan_product = LoanProduct.find params[:id]
+    @loan_product.update_attributes(params[:loan_product])
+    respond_with(:data_manager,@loan_product,location: data_manager_loan_products_url)
+  end
   def show
     @loan_product = LoanProduct.find params[:id]
   end

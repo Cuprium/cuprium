@@ -10,4 +10,3 @@ Feature:
     When I fill in the product name with "Test product"
     And I press "Create Loan product"
     Then I should see "Test product"
-    # Edit tbd

@@ -1,5 +1,5 @@
 <div class="span6">
-  <h1><%= @loan_product.name %></h1>
+  <h1><%= link_to @loan_product.name, [:edit,:data_manager,@loan_product] %></h1>
   <table class="table table-striped">
     <tr>
       <th><%= Question.human_attribute_name(:page) %></th>
@@ -16,5 +16,5 @@
 
 </div>
 <div class="span6">
-  <p><%= link_to t(:create_question,scope:[:data_manager,:loan_product]), new_data_manager_loan_product_question_path(@loan_product)  %>
+  <p><%= link_to t(:create_question,scope:[:data_manager,:loan_product]), [:new,:data_manager,@loan_product,:question]  %>
 </div>
