@@ -16,9 +16,17 @@ class DataManager::QuestionsController < DataManager::CommonController
   end
 
   def edit
+    @question = @loan_product.questions.find params[:id]
   end
 
   def update
+    @question = @loan_product.questions.find params[:id]
+    if @question.update_attributes(params[:question])
+      flash[:message] =  t(:updated_ok,name: Question.model_name) 
+      redirect_to data_manager_loan_product_path(@loan_product)
+    else
+      respond_with @question
+    end
   end
 
   def destroy

@@ -10,6 +10,7 @@ en:
   account: Account
   create: "Create %{name}"
   created_ok: "%{name} created"
+  updated_ok: "%{name} updated"
 
   balance: Balance
   payment: Payment

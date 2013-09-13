@@ -3,12 +3,14 @@
   <table class="table table-striped">
     <tr>
       <th><%= Question.human_attribute_name(:page) %></th>
+      <th><%= Question.human_attribute_name(:display_order) %></th>
       <th><%= Question.human_attribute_name(:text) %></th>
     </tr>
     <% for question in @loan_product.questions do %>
       <tr>
-        <td><%= link_to question.page, [:data_manager,@loan_product,question] %></td>
-        <td><%= link_to question.text, [:data_manager,@loan_product,question] %></td>
+        <td><%= link_to question.page,          [:edit,:data_manager,@loan_product,question] %></td>
+        <td><%= link_to question.display_order, [:edit,:data_manager,@loan_product,question] %></td>
+        <td><%= link_to question.text,          [:edit,:data_manager,@loan_product,question] %></td>
       </tr>
     <% end %>
 
