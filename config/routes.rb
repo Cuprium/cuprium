@@ -1,7 +1,5 @@
 Cuprium::Application.routes.draw do
  
-  get "accounts/search"
-
   devise_for :data_managers 
 
   namespace :data_manager do
@@ -22,7 +20,13 @@ Cuprium::Application.routes.draw do
     end
   end
 
-  resources :loan_applications, only: [:new,:create]
+  resources :loan_applications do
+    member do 
+      match '/page/:page_number' => 'loan_applications#page', as: 'page'
+      match '/product/:product_number' => 'loan_applications#product', as: 'product'
+      match 'complete' => 'loan_applications#complete', as: 'complete'
+    end
+  end
 
   resources :clients, only: [:new,:create], controller: 'loan_applications'
 

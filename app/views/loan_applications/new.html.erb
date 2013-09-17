@@ -1,6 +1,9 @@
 <h1><%= t(:make_loan_application,scope: :loan_application)  %></h1>
 <div class="span6">
+	<%= render "shared/form_errors", :object => @client %>
+
   <%= form_for @client, html: {class: 'form-horizontal'} do |form| %>
+	  <%= hidden_field_tag :product_id, @loan_product.id %>
     <fieldset>
       <div class="control-group">
         <%= form.label :title, class: 'control-label' %>
@@ -69,7 +72,7 @@
         </div>
       </div>
       <div class="control-group">
-        <%= form.label :alt_phone, class: 'control-label', text: t(:alt_phone, scope: :public) %>
+        <%= form.label :alt_phone, class: 'control-label' %>
         <div class="controls">
           <%= form.text_field :alt_phone, { class: 'input-xlarge' } %>
         </div>
@@ -80,6 +83,3 @@
     </fieldset>
   <% end %>
 </div>
-<%= content_for :errors do %>
-  <%= render "shared/form_errors", :object => @client %>
-<% end %>

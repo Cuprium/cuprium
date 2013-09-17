@@ -15,6 +15,12 @@
         </div>
       </div>
       <div class="control-group">
+       <%= form.label :kind, class: 'control-label' %> 
+        <div class="controls">
+          <%= form.select :kind, Question::KindList, {}, { class: 'input-small' } %>
+        </div>
+      </div>
+      <div class="control-group">
        <%= form.label :text, class: 'control-label' %> 
        <div class="controls">
          <%= form.text_area :text, { class: 'input-xlarge' } %> 

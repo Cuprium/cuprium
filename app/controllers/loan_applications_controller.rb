@@ -1,8 +1,33 @@
 class LoanApplicationsController < ApplicationController
+  respond_to :html
+  before_filter :find_loan_product, except: [:index,:page]
+
+  def index
+    @loan_products = LoanProduct.all
+  end
+  
   def new
-    @client = session[:client] || Client.new
+    @client = Client.new
   end
 
   def create
+    @client = Client.new(params[:client])
+    if @client.valid?
+      @loan_application = @loan_product.loan_applications.new
+      @loan_application.set_client(@client)
+      @loan_application.save!
+      redirect_to page_loan_application_path(@loan_application,page_number:0)
+    else
+      render :new
+    end
+  end
+
+  def page
+    @loan_application = LoanApplication.find params[:id]
+    @pages = @loan_application.get_responses
+  end
+  private
+  def find_loan_product
+    @loan_product = LoanProduct.find params[:product_id]
   end
 end

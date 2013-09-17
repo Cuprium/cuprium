@@ -4,7 +4,8 @@ FactoryGirl.define do
   factory :question do
     loan_product_id 1
     page 1
-    text "MyString"
+    display_order 1
+    kind 'yesno'
     text "MyString"
   end
 end

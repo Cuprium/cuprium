@@ -1,0 +1,8 @@
+<h1><%= t(:select_loan_application ,scope: :loan_application ) %> </h1>
+<table>
+	<% for product in @loan_products do -%>
+    <tr>
+		  <td><%= link_to(product.name, new_loan_application_path(product_id: product)) %></td>
+	  </tr>
+	<% end -%>
+</table>

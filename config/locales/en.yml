@@ -32,7 +32,14 @@ en:
 
   loan_application:
     make_loan_application: Make a loan application
- 
+    select_loan_application: What do you want to apply for?
+
+  models:
+    question:
+      yesno: Yes/No
+      list: List of values
+      date: Date
+      
   data_manager:
     welcome: Welcome Data Manager
     index_page_message: Please select which area you want to work in from the menu above.

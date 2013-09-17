@@ -4,4 +4,5 @@ describe LoanProduct do
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
   it { should have_many(:questions) }
+  it { should have_many(:loan_applications) }
 end

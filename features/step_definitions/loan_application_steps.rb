@@ -64,3 +64,6 @@ end
 #  fill_in "client_alt_phone",     with: amended_client.alt_phone
 #end
 
+Given(/^personal details are recorded$/) do
+  LoanApplic
+end

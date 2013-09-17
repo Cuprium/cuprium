@@ -17,6 +17,7 @@ end
 When(/^I fill in the question details$/) do
   select '1', from: 'question_page'
   select '1', from: 'question_display_order'
+  select 'Yes/No', from: 'question_kind'
   fill_in "question_text", with: "Some test question text"
 end
 
