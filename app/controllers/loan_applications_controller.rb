@@ -24,7 +24,15 @@ class LoanApplicationsController < ApplicationController
 
   def page
     @loan_application = LoanApplication.find params[:id]
-    @pages = @loan_application.get_responses
+    @pages = @loan_application.pages
+    # Note using Integer not to_i so lack of param will cause
+    # an exception
+    @page_number = Integer(params[:page_number])
+    @page = @pages[@page_number]
+    binding.pry
+  end
+  def save_page
+    
   end
   private
   def find_loan_product

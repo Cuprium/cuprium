@@ -2,7 +2,7 @@ class LoanApplication < ActiveRecord::Base
   attr_accessible :client_details, :client_id, :loan_product_id, :responses, :state
   validates_presence_of :client_details, :loan_product_id, :state
   belongs_to :loan_product
-  serialize :responses
+  serialize :responses, Array
   before_validation(on: :create) do
     self.state ||= "client_only"
     default_responses

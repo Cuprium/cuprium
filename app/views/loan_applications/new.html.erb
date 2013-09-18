@@ -1,7 +1,8 @@
 <h1><%= t(:make_loan_application,scope: :loan_application)  %></h1>
-<div class="span6">
+<div class="span3">
 	<%= render "shared/form_errors", :object => @client %>
-
+</div>
+<div class="span6">
   <%= form_for @client, html: {class: 'form-horizontal'} do |form| %>
 	  <%= hidden_field_tag :product_id, @loan_product.id %>
     <fieldset>

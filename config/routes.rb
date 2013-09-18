@@ -25,6 +25,7 @@ Cuprium::Application.routes.draw do
       match '/page/:page_number' => 'loan_applications#page', as: 'page'
       match '/product/:product_number' => 'loan_applications#product', as: 'product'
       match 'complete' => 'loan_applications#complete', as: 'complete'
+      post :save_page
     end
   end
 
