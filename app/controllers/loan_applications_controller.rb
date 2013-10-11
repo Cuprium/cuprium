@@ -29,7 +29,6 @@ class LoanApplicationsController < ApplicationController
     # an exception
     @page_number = Integer(params[:page_number])
     @page = @pages[@page_number]
-    binding.pry
   end
   def save_page
     

@@ -4,8 +4,10 @@ Feature:
   I want to fill in my details
   Background: Start from public site
     Given I start from the home screen
+    And loan product called "test loan" exists
   Scenario: Capture personal details
     Given I click "Make a loan application"
+    And I click on "test loan"
     When I fill in my details
     And I press "Next page"
     And I click "test loan"

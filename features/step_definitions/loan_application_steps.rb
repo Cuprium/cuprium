@@ -65,5 +65,8 @@ end
 #end
 
 Given(/^personal details are recorded$/) do
-  LoanApplic
+  @loan_product ||= LoanProduct.find_or_create_by_name 'test loan'
+  @loan_application = LoanApplication.new(loan_product_id: @loan_product.id)
+  @loan_application.raw_client = dummy_client
+  @loan_application.save!
 end
