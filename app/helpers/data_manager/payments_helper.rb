@@ -1,2 +1,0 @@
-module DataManager::PaymentsHelper
-end
