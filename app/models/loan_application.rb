@@ -2,7 +2,7 @@ class LoanApplication < ActiveRecord::Base
   attr_accessible :client_details, :client_id, :loan_product_id, :responses, :state
   validates_presence_of :client_details, :loan_product_id, :state
   belongs_to :loan_product
-  serialize :responses, Array
+  serialize :responses
   before_validation(on: :create) do
     self.state ||= "client_only"
     default_responses
@@ -19,7 +19,11 @@ class LoanApplication < ActiveRecord::Base
   private
   def default_responses
     return [] unless loan_product
-    self.responses ||= Array.new.tap do |_responses|
+    self.responses = generate_responses if responses.blank?
+    responses
+  end
+  def generate_responses
+    Array.new.tap do |_responses|
       page = LoanPage.new
       last_page_number = -1
       loan_product.questions.in_order.each do |question|
