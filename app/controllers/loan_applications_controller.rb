@@ -14,7 +14,7 @@ class LoanApplicationsController < ApplicationController
     @client = Client.new(params[:client])
     if @client.valid?
       @loan_application = @loan_product.loan_applications.new
-      @loan_application.set_client(@client)
+      @loan_application.raw_client = @client
       @loan_application.save!
       redirect_to page_loan_application_path(@loan_application,page_number:0)
     else
