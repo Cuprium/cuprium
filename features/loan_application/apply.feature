@@ -5,17 +5,16 @@ Feature:
   Background: Start from public site
     Given I start from the home screen
     And loan product called "test loan" exists
+    And "test loan" has the question "test question"
   Scenario: Capture personal details
     Given I click "Make a loan application"
-    And I click on "test loan"
+    And I click "test loan"
     When I fill in my details
     And I press "Next page"
-    And I click "test loan"
-    Then I should see "Loan application page 1"
+    Then I should see "test question"
   Scenario: Answer single page and question
     Given personal details are recorded
     And I am on page 1 of "test loan"
-    And "test loan" has the question "test question"
     When I answer "test question" with "yes"
     And I press "Finish my application"
     Then I should see "thank you for your application"

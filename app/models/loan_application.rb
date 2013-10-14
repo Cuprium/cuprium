@@ -1,3 +1,5 @@
+require 'loan_page'
+require 'loan_question_response'
 class LoanApplication < ActiveRecord::Base
   attr_accessible :client_details, :client_id, :loan_product_id, :responses, :state
   validates_presence_of :client_details, :loan_product_id, :state
@@ -19,7 +21,11 @@ class LoanApplication < ActiveRecord::Base
   private
   def default_responses
     return [] unless loan_product
-    self.responses = generate_responses if responses.blank?
+    if responses.blank?
+      self.responses = generate_responses 
+    else
+      self.responses = YAML.load(self.responses) unless self.responses.is_a?( Array )
+    end
     responses
   end
   def generate_responses

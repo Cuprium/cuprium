@@ -27,7 +27,11 @@ en:
   transfer_needs_both_accounts_to_exist: transfer needs both accounts to exist
   transfer_amount_must_be_greater_than_zero: transfer amount must be greater than zero
   cannot_create_a_ledger_entry_without_a_type: cannot create a ledger entry without a type
-  
+
+  # Note that yes and no keys have been hijacked somewhere in the rails stack
+  yes_answer: "Yes"
+  no_answer: "No"
+
   next_page: Next page
 
   loan_application:
@@ -39,7 +43,7 @@ en:
       yesno: Yes/No
       list: List of values
       date: Date
-      
+
   data_manager:
     welcome: Welcome Data Manager
     index_page_message: Please select which area you want to work in from the menu above.

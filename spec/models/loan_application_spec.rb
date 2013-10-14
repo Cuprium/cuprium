@@ -44,7 +44,8 @@ describe LoanApplication do
       loan_product.reload
     end
     it "build from questions" do
-      loan_application = build(:loan_application,loan_product_id: loan_product.id)
+      loan_application = create(:loan_application,loan_product_id: loan_product.id)
+      loan_application = LoanApplication.find(loan_application.id)
       loan_application.pages.size.should == 2
     end
     it "saves responses" do

@@ -7,7 +7,7 @@
   <%= form_for :page, url: save_page_loan_application_path(@loan_application), html: {class: 'form-horizontal'} do |form| %>
 	  <%= hidden_field_tag :page_number, @page_number %>
     <fieldset>
-			<% form.fields_for :questions do |builder| -%>
+			<%= form.fields_for :questions do |builder| -%>
 			  <% for question in @page.questions do -%>
 			    <%= builder.hidden_field :text %>
           <div class="span4">
